@@ -1,4 +1,4 @@
 
 # Bienvenid@!! 
 
-Iremos iniciando esta app para gestionae rapidamente.
+Iremos iniciando esta app para gestionar rapidamente.
