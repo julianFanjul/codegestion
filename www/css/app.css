@@ -84,4 +84,65 @@
 	font-family: 'Poppins', Arial, sans-serif;
 }
 
+.display-none {
+  display: none !important;
+}
 
+.display-block {
+  display: block !important;
+}
+
+
+#ingresarEAN{
+  width: 50%;
+
+}
+
+#escanearcodEAN {
+  width: 50%;
+  margin-top: 7px;
+}
+
+#ingCATEGORIA , #ingMARCA {
+  width: 50%;
+}
+
+#ingPRECIO {
+  width: 50%;
+  
+}
+
+#ingFOTO {
+  width: 50%;
+  margin-top: 7px;
+}
+
+.m-auto {
+  margin: auto !important;
+}
+
+.text-align-center{
+  text-align: center !important;
+}
+
+
+.w-50 {
+  width: 50% !important;
+}
+
+
+#articulosAcargar {
+  height: 300px !important;
+  overflow-y: scroll;
+}
+
+.sinMarginTyB{
+  margin-top: 0px;
+  margin-bottom: 0px ;
+}
+
+.mt-2 {
+
+  margin-top: 0.3em !important;
+
+}

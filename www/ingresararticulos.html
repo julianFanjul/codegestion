@@ -1,0 +1,125 @@
+<!-- We don't need a full layout in this file because this page will be parsed with Ajax.  -->
+<div class="page" data-name="ingresararticulos">
+    <div class="navbar">
+        <div class="navbar-inner sliding">
+            <div class="left">
+                <a href="#" class="link back">
+                    <i class="icon icon-back"></i>
+                    <span class="ios-only">Back</span>
+                </a>
+            </div>
+            <div class="title m-auto">Agregar Stock</div>
+        </div>
+    </div>
+    <div class="page-content">
+
+
+        <div class="row">
+            <div class="col-100">
+
+
+                <div class="list sinMarginTyB">
+                    <ul>
+                        <li class="item-content item-input item-input-outline">
+                            <div class="item-inner ">
+                                <div class="item-title item-floating-label">Descripcion</div>
+                                <div class="item-input-wrap">
+                                    <input type="text" placeholder="Descripcion">
+                                    <span class="input-clear-button"></span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="accordion-item"><a href="#" class="item-content item-link">
+                                <div class="item-inner col button button-raised">
+                                    <div class="item-title">ESCANEAR / INGRESAR POR CODIGO</div>
+                                </div>
+                            </a>
+                            <div class="accordion-item-content">
+                                <div class="block">
+                                    <div class="list no-hairlines-md">
+                                        <ul>
+
+
+                                            <li class="item-content item-input item-input-outline">
+                                                <div class="item-inner  w-50" id="ingresarEAN">
+                                                    <div class="item-title item-floating-label">Codigo QR / ID</div>
+                                                    <div class="item-input-wrap">
+                                                        <input type="text" placeholder="Codigo QR / ID">
+                                                        <span class="input-clear-button"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="item-inner  w-50" id="escanearcodEAN">
+                                                    <button class="col button button-raised">escanear QR</button>
+                                                </div>
+                                            </li>
+
+
+
+                                            <li class="item-content item-input item-input-outline">
+                                                <div class="item-inner w-50">
+                                                    <div class="item-title item-floating-label">Codigo EAN</div>
+                                                    <div class="item-input-wrap">
+                                                        <input type="text" placeholder="Codigo EAN">
+                                                        <span class="input-clear-button"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="item-inner w-50">
+                                                    <button class="col button button-raised">escanear EAN</button>
+                                                </div>
+                                            </li>
+
+
+
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <div class="col-50">
+                            <li class="item-content item-input item-input-outline">
+                                <div class="item-inner w-50" id="ingresarEAN">
+                                    <div class="item-title item-floating-label">Cantidad</div>
+                                    <div class="item-input-wrap">
+                                        <input type="number" placeholder="Cantidad">
+                                        <span class="input-clear-button"></span>
+                                    </div>
+                                </div>
+                                <div class="item-inner  w-50" id="escanearcodEAN">
+                                    <button class="col button button-raised button-fill">agregar</button>
+                                </div>
+                            </li>
+                        </div>
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="list simple-list m-auto col-80 text-align-center" id="articulosAcargar">
+                <ul>
+                    <li>10 - remera verde - talle S</li>
+                    <li>50 - Pantalon - talle 30</li>
+                    <li>1 - billetera - talle 30</li>
+                    <li>50 - Pantalon - talle 30</li>
+                    <li>1 - billetera - talle 30</li>
+                    <li>50 - Pantalon - talle 30</li>
+                    <li>1 - billetera - talle 30</li>
+                    <li>50 - Pantalon - talle 30</li>
+                    <li>1 - billetera - talle 30</li>
+                </ul>
+            </div>
+            <div id="totalDeArticulos" class="col-80 m-auto text-align-center">
+
+                <p>total - 5 modelos - 50 unidades</p>
+            </div>
+
+            <div class="col-90 m-auto">
+                <button class="col button button-raised button-fill">INGRESAR A STOCK</button>
+            </div>
+        </div>
+    </div>
+</div>
