@@ -47,40 +47,73 @@ var app = new Framework7({
       path: '/crearEtiquetasEnvios/',
       url: 'crearEtiquetasEnvios.html',
     },
+    {
+      path: '/generarListaDePrecios/',
+      url: 'generarListaDePrecios.html',
+    },
+    {
+      path: '/consultarPrecios/',
+      url: 'consultarPrecios.html',
+    },
   ]
   // ... other parameters
 });
 
+
+
+
+//declaracion de variables globales
 var mainView = app.views.create('.view-main');
 var email;
 
+
+
+var categoriaArticulo = "";
+var marcaArticulo = "";
+var descripcionArticulo = "";
+var EanArticulo = "";
+var precioArticulo = 0;
+var sucursalUsuario = "sucursal2";
+//declaracion de variables globales
+
+
+$$("#crearArticuloEnBaseDeDatos").on("click", crearArticuloEnBase);
+
+
+
+//funcion para crear articulo en base
+function crearArticuloEnBase() {
+  var db = firebase.firestore();
+  descripcionArticulo = $$("#crearDescripcionArticulo").val();
+  EanArticulo = $$("#crearEanArticulo").val();
+  categoriaArticulo = $$("#crearCategoriaArticulo").val();
+  marcaArticulo = $$("#crearMarcaArticulo").val();
+  precioArticulo = $$("#crearPrecioArticulo").val();
+
+  console.log('se creo el articulo' + descripcionArticulo + 'en la base');
+
+  var datosArticulos = {
+    id_articulo: "133",
+    ean: EanArticulo,
+    descripcion: descripcionArticulo,
+    talles: "XL",
+    stock: 8,
+    foto: "rutaejemplo/imagen.jpg",
+    precio: precioArticulo,
+    ubicacion: "7b",
+    codigoqr: "rutaejemplo/12.pdf",
+    medidas: "",
+    usuarioDeCreacion: email,
+  }
+  db.collection("sucursal").doc(sucursalUsuario).collection("categorias").doc(categoriaArticulo).collection(marcaArticulo).doc(descripcionArticulo).set(datosArticulos);
+}
+//funcion para crear articulo en base
+
+
 $$("#loginAPP").on("click", loginApp);
+$$("#registrarUser").on('click', RegistrarUser);
 
-/* 
-$$('#loginAPP').on('click', function () {
-
-  var email = $$('#emailIN').val();
-  var password = $$('#passwordIN').val();
-
-  //var email = "usuario@dominio.com";
-  // var password = "12345678";
-
-
-  //esta funcion hace el SignIn Email Password
-  firebase.auth().signInWithEmailAndPassword(email, password).then(function () {
-    mainView.router.navigate("/about/");
-  }).catch(function (error) {
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    alert('el error fue: ' + errorMessage);
-    // ...
-  })
-
-});
-*/
-
-
+// funciones para ir a registrarse o a login
 $$('#volverAsignIN').on('click', function () {
   $$('#formRegistrarUser').removeClass("display-block"); $$('#formRegistrarUser').addClass("display-none");
   $$('#formValidarUser').removeClass("display-none"); $$('#formValidarUser').addClass("display-block");
@@ -90,8 +123,14 @@ $$('#irAregistrase').on('click', function () {
   $$('#formValidarUser').removeClass("display-block"); $$('#formValidarUser').addClass("display-none");
   $$('#formRegistrarUser').removeClass("display-none"); $$('#formRegistrarUser').addClass("display-block");
 })
+// funciones para ir a registrarse o a login
 
-$$("#registrarUser").on('click', RegistrarUser);
+
+
+
+
+
+
 
 
 
@@ -99,34 +138,6 @@ $$("#registrarUser").on('click', RegistrarUser);
 $$(document).on('deviceready', function () {
   console.log("Device is ready!");
 
-
-
-
-
-
-  // esto crea una coleccion en la db
-  var db = firebase.firestore();
-  var stock = 8;
-  stock++;
-
-  var articulos = db.collection("articulos");
-  var miID = "12345";
-
-  datosArticulos = {
-    id_articulo: "13",
-    ean: "54654565465",
-    descripcion: "remera verde",
-    talles: "XL",
-    stock: stock,
-    foto: "rutaejemplo/imagen.jpg",
-    precio: "777",
-    ubicacion: "7b",
-    codigoqr: "rutaejemplo/12.pdf",
-    medidas: "",
-  }
-
-  articulos.doc(miID).set(datosArticulos);
-  // esto crea una coleccion en la db
 
 });
 
@@ -144,7 +155,7 @@ $$(document).on('page:init', '.page[data-name="about"]', function (e) {
 
 })
 
-
+//funcion registrar usuario
 function RegistrarUser() {
   if ($$('#passwordCreate').val() === $$('#passwordCreate2').val()) {
     email = $$('#emailCreate').val();
@@ -168,13 +179,14 @@ function RegistrarUser() {
 
       });
   } else { alert('las contraseñas no son iguales'); }
-
-
 }
+//funcion registrar usuario
 
-
+//funcion login app
 function loginApp() {
+
   email = $$('#emailIN').val();
+
   var password = $$('#passwordIN').val();
   //var email = "usuario@dominio.com";
   // var password = "12345678";
@@ -190,7 +202,10 @@ function loginApp() {
     // ...
   })
 }
+//funcion login app
 
+
+//funcion para guardar datos usuario *** todavia falta implementar
 function fnReg2() {
   /*
   coleccion: personas
@@ -233,6 +248,4 @@ function fnReg2() {
       // ...
     })
     ;
-
-
-}
+}//funcion para guardar datos usuario *** todavia falta implementar

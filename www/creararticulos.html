@@ -22,7 +22,7 @@
                             <div class="item-inner">
                                 <div class="item-title item-floating-label">Descripcion</div>
                                 <div class="item-input-wrap">
-                                    <input type="text" placeholder="Descripcion">
+                                    <input type="text" placeholder="Descripcion" id="crearDescripcionArticulo">
                                     <span class="input-clear-button"></span>
                                 </div>
                             </div>
@@ -32,7 +32,7 @@
                                 <div class="item-inner" id="ingresarEAN">
                                     <div class="item-title item-floating-label">Codigo EAN</div>
                                     <div class="item-input-wrap">
-                                        <input type="text" placeholder="Codigo EAN">
+                                        <input type="text" placeholder="Codigo EAN" id="crearEanArticulo">
                                         <span class="input-clear-button"></span>
                                     </div>
                                 </div>
@@ -45,14 +45,14 @@
                             <div class="item-inner" id="ingCATEGORIA">
                                 <div class="item-title item-floating-label">Categoria</div>
                                 <div class="item-input-wrap">
-                                    <input type="text" placeholder="Categoria">
+                                    <input type="text" placeholder="Categoria" id="crearCategoriaArticulo">
                                     <span class="input-clear-button"></span>
                                 </div>
                             </div>
                             <div class="item-inner" id="ingMARCA">
                                 <div class="item-title item-floating-label">Marca</div>
                                 <div class="item-input-wrap">
-                                    <input type="text" placeholder="Marca">
+                                    <input type="text" placeholder="Marca" id="crearMarcaArticulo">
                                     <span class="input-clear-button"></span>
                                 </div>
                             </div>
@@ -61,7 +61,7 @@
                             <div class="item-inner" id="ingPRECIO">
                                 <div class="item-title item-floating-label">Precio</div>
                                 <div class="item-input-wrap">
-                                    <input type="number" placeholder="Precio">
+                                    <input type="number" placeholder="Precio" id="crearPrecioArticulo">
                                     <span class="input-clear-button"></span>
                                 </div>
                             </div>
@@ -106,13 +106,11 @@
                             </div>
                         </li>
 
-                        <li class="item-content item-input item-input-outline">
-                            <div class="item-inner">
-                                <button class="col button button-outline button-raised">Crear</button>
-                            </div>
-                        </li>
 
-                    </ul>
+                        <div class="item-inner">
+                            <button class="col button button-outline button-raised" id="crearArticuloEnBaseDeDatos"
+                                onclick="crearArticuloEnBase()">Crear</button>
+                        </div>
 
 
                 </div>
