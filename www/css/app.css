@@ -146,3 +146,174 @@
   margin-top: 0.3em !important;
 
 }
+
+.navofsesion {
+  background-color: white !important;
+  box-shadow: 0 3px 3px -3px rgba(0,0,0,.3);
+}
+
+.mtb-2 {
+  margin: 23px 0px 23px 0px !important;
+}
+
+
+.nav-consultas{
+  padding-top: 30px;
+  list-style-type: none;
+  list-style: none;
+
+
+}
+
+.modal-in{
+  height: 40vh
+   !important;
+}
+
+.d-none {
+  display: none !important;
+}
+
+.d-block {
+  display: block !important;
+}
+
+
+#githubLink {
+  position: absolute;
+  right: 0;
+  top: 12px;
+  color: #2D99FF;
+}
+
+h1 {
+  margin: 10px 0;
+  font-size: 40px;
+}
+
+#loadingMessage {
+  text-align: center;
+  padding: 40px;
+  background-color: #eee;
+}
+
+#canvas {
+  width: 100%;
+}
+
+#output {
+  margin-top: 20px;
+  background: #eee;
+  padding: 10px;
+  padding-bottom: 0;
+}
+
+#output div {
+  padding-bottom: 10px;
+  word-wrap: break-word;
+}
+
+#noQRFound {
+  text-align: center;
+}
+
+#output {
+   
+}
+
+
+#resultadosBusquedaEscaneo {
+  padding-top: 15px;
+  padding-bottom: 12px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 15px;
+  border-radius: 38px;
+  background: linear-gradient(145deg, #e6e6e6, #ffffff);
+  box-shadow:  2px 6px 3px #d9d9d9, 
+               -5px -5px 5px #ffffff;
+}
+
+#imagenbusqueda {
+  margin-left: 5vw !important;
+}
+
+#imagenBusquedaQR{
+  width: 35vw;
+  margin-top: 20px;
+}
+
+#datosConsultaEscaneo {
+  padding-left: 25px;
+  padding-right: 10px;
+}
+
+.margin-2{
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+}
+
+.popup {
+  height: 100vh !important;
+}
+
+.pad-left {
+  padding-left: 14% !important;
+}
+
+.mas-pad {
+  padding-left: 25% !important;
+}
+
+#tituloPrincipal{
+  padding: 20px;
+  padding-left: 40px;
+}
+
+#botonappbar{
+  border-radius: 45px;
+
+  padding: 15px !important;
+  border-radius: 10px;
+ /* background: #98e6ec;*/
+/*
+  box-shadow:  5px 5px 5px #8fd8de, 
+               -5px -5px 5px #a1f4fa;*/
+            
+}
+#appbar {
+  /*background: #98e6ec;*/
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#menuprincipal {
+ /* background: #8fd8de !important;*/
+}
+
+#background {
+  background-color:  #d8eae8 !important;
+}
+#descargarreporte{
+  margin-top: 15px;
+}
+
+.sin-m-t-b { 
+  margin-top: 2px !important;
+  margin-bottom: 2px !important;
+}
+
+#elegirtipoconsulta {
+  margin-left: 10% !important;
+  width: 60vw !important;
+}
+
+#agregararticulo { 
+  margin-top: 5px!important;
+}
+
+#actualizarprecio {  margin-top: 5px!important; }
+
+#tareaspendientes {
+  margin-top: 15px !important;
+  margin-left: 38% !important;}
