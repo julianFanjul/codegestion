@@ -1,4 +1,5 @@
 
 # Bienvenid@!! 
 
-Iremos iniciando esta app para gestionar rapidamente.
+
+Gestiona rápidamente con CODEGESTION
