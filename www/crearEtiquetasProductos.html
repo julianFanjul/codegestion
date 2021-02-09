@@ -1,7 +1,7 @@
 <!-- We don't need a full layout in this file because this page will be parsed with Ajax.  -->
 <div class="page" data-name="crearEtiquetasProductos">
     <div class="navbar">
-        <div class="navbar-inner sliding">
+        <div class="navbar-inner sliding navofsesion">
             <div class="left">
                 <a href="#" class="link back">
                     <i class="icon icon-back"></i>
@@ -19,6 +19,18 @@
 
                 <div class="list sinMarginTyB">
                     <ul>
+                        <li class="item-content item-input item-input-outline ">
+                            <div class="item-inner">
+                                <div class="item-title item-floating-label">Descripcion</div>
+                                <div class="item-input-wrap">
+                                    <input type="text" placeholder="descripción a consultar"
+                                        id="autocomplete-dropdown-descripcion-etiquetas">
+                                    <span class="input-clear-button"></span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!--
                         <li class="item-content item-input item-input-outline">
                             <div class="item-inner ">
                                 <div class="item-title item-floating-label">Descripcion</div>
@@ -76,17 +88,19 @@
                                 </div>
                             </div>
                         </li>
+                        -->
                         <div class="col-50">
                             <li class="item-content item-input item-input-outline">
                                 <div class="item-inner w-50" id="ingresarEAN">
                                     <div class="item-title item-floating-label">Cantidad</div>
                                     <div class="item-input-wrap">
-                                        <input type="number" placeholder="Cantidad">
+                                        <input type="number" placeholder="Cantidad" id="cantidadEtiqAimpmir">
                                         <span class="input-clear-button"></span>
                                     </div>
                                 </div>
                                 <div class="item-inner  w-50" id="escanearcodEAN">
-                                    <button class="col button button-raised button-fill">Generar</button>
+                                    <button class="col button button-raised button-fill"
+                                        onclick="imprimir2(2)">Generar</button>
                                 </div>
                             </li>
                         </div>

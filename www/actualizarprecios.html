@@ -1,0 +1,75 @@
+<!-- We don't need a full layout in this file because this page will be parsed with Ajax.  -->
+<div class="page" data-name="actualizarprecios">
+    <div class="navbar">
+        <div class="navbar-inner sliding navofsesion">
+            <div class="left">
+                <a href="#" class="link back">
+                    <i class="icon icon-back"></i>
+                    <span class="ios-only">Back</span>
+                </a>
+            </div>
+            <div class="title">Actualizar precios</div>
+        </div>
+    </div>
+    <div class="page-content">
+
+
+        <div class="row">
+            <div class="col-100 sin-m-t-b">
+                <div class="list sin-m-t-b">
+                    <ul>
+                        <li class="item-content">
+                            <div class="item-inner" id="actualizarprecio">
+                                <button class="button button-outline button-raised"
+                                    onclick="actualizarPrecio(1)">buscar</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-100 sin-m-t-b">
+
+
+                <div class="list sinMarginTyB sin-m-t-b">
+                    <ul>
+                        <li class="item-content item-input item-input-outline ">
+                            <div class="item-inner">
+                                <div class="item-title item-floating-label">Descripcion del artículo</div>
+                                <div class="item-input-wrap">
+                                    <input type="text" placeholder="descripción del artículo"
+                                        id="autocomplete-dropdown-descripcion-actualizar-precios">
+                                    <span class="input-clear-button"></span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="item-content item-input item-input-outline">
+                            <div class="item-inner" id="ingPRECIO">
+                                <div class="item-title item-floating-label">Precio</div>
+                                <div class="item-input-wrap">
+                                    <input type="number" placeholder="Precio del artículo"
+                                        id="actualizarPrecioArticulo">
+                                    <span class="input-clear-button"></span>
+                                </div>
+                            </div>
+
+
+
+                            <div class="item-inner">
+                                <button class="col button button-raised button-fill" id="actualizarprecio"
+                                    onclick="actualizarPrecio(2)">Actualizar</button>
+                            </div>
+                        </li>
+
+                </div>
+            </div>
+        </div>
+        <div class="row" id="preciosactualizados">
+
+
+        </div>
+
+
+
+    </div>
+</div>
+</div>

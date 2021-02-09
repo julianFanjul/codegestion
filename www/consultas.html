@@ -1,0 +1,461 @@
+<!-- We don't need a full layout in this file because this page will be parsed with Ajax.  -->
+<div class="page" data-name="consultas">
+    <div class="navbar">
+        <div class="navbar-inner sliding navofsesion">
+            <div class="left">
+                <a href="#" class="link back">
+                    <i class="icon icon-back"></i>
+                    <span class="ios-only">Back</span>
+                </a>
+            </div>
+
+            <div class="list sin-m-t-b">
+                <ul>
+                    <li class="item-content">
+                        <div class="item-inner">
+                            <a class="col button button-raised mtb-2 sheet-open m-auto" href="#" data-sheet=".my-sheet"
+                                id="elegirtipoconsulta">Elegir tipo de consulta</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- <div class="col button button-outline button-round button-raised mtb-2 sheet-open m-auto"
+                onclick="imprimir2(3)">Descargar</div>-->
+
+        </div>
+    </div>
+    <div class="page-content">
+
+
+
+        <!-- Default bottom sheet -->
+        <div class="sheet-modal my-sheet">
+            <div class="toolbar">
+                <div class="toolbar-inner">
+                    <div class="left"></div>
+                    <div class="right"></div>
+                </div>
+            </div>
+            <div class="sheet-modal-inner">
+                <div class="list">
+                    <ul>
+                        <li>
+                            <label class="item-radio item-radio-icon-end item-content" onclick="navegarEnConsultas(1)">
+                                <input type="radio" name="demo-radio-end" value="1" id="r1" />
+                                <i class="icon icon-radio"></i>
+                                <div class="item-inner">
+                                    <div class="item-title" id="1">Por descripcion</div>
+                                </div>
+                            </label>
+                        </li>
+                        <!--
+                        <li>
+                            <label class="item-radio item-radio-icon-end item-content" onclick="navegarEnConsultas(2)">
+                                <input type="radio" name="demo-radio-end" value="2" id="r2" />
+                                <i class="icon icon-radio"></i>
+                                <div class="item-inner">
+                                    <div class="item-title" id="2">Por categoria</div>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="item-radio item-radio-icon-end item-content" onclick="navegarEnConsultas(3)">
+                                <input type="radio" name="demo-radio-end" value="3" id="r3" />
+                                <i class="icon icon-radio"></i>
+                                <div class="item-inner">
+                                    <div class="item-title" id="3">Por marca</div>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="item-radio item-radio-icon-end item-content" onclick="navegarEnConsultas(4)">
+                                <input type="radio" name="demo-radio-end" value="4" id="r4" />
+                                <i class="icon icon-radio"></i>
+                                <div class="item-inner">
+                                    <div class="item-title" id="4">Por precio</div>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="item-radio item-radio-icon-end item-content" onclick="navegarEnConsultas(5)">
+                                <input type="radio" name="demo-radio-end" value="5" id="r5" />
+                                <i class="icon icon-radio"></i>
+                                <div class="item-inner">
+                                    <div class="item-title" id="5">Por stock</div>
+                                </div>
+                            </label>
+                        </li>-->
+                        <li>
+                            <label class="item-radio item-radio-icon-end item-content" onclick="navegarEnConsultas(6)">
+                                <input type="radio" name="demo-radio-end" value="6" />
+                                <i class="icon icon-radio"></i>
+                                <div class="item-inner">
+                                    <div class="item-title" id="6">Mediante escaneo</div>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="item-radio item-radio-icon-end item-content" onclick="navegarEnConsultas(7)">
+                                <input type="radio" name="demo-radio-end" value="6" checked />
+                                <i class="icon icon-radio"></i>
+                                <div class="item-inner">
+                                    <div class="item-title" id="6">Consulta compuesta</div>
+                                </div>
+                            </label>
+                        </li>
+
+
+                        <li class="item-content item-input item-input-outline">
+                            <div class="item-inner">
+                                <button class="col button button-raised button-fill link sheet-close">Ok</button>
+                            </div>
+                        </li>
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="row todos d-none" id="consulta-descripcion">
+            <div class="col-100">
+                <h3 class="text-align-center">Consultar mediante descripción</h3>
+                <div class="list sin-m-t-b">
+                    <ul>
+                        <!--
+                        <div class="list no-hairlines-md">
+                            <li class="item-content item-input inline-label">
+                                <div class="item-inner">
+                                    <div class="item-title item-label">Descripcion: </div>
+                                    <div class="item-input-wrap">
+                                        <input id="autocomplete-dropdown-descripcion" type="text"
+                                            placeholder="Indicá la descripción">
+                                    </div>
+                                </div>
+                            </li>
+                        </div>-->
+
+
+                        <li class="item-content item-input item-input-outline sin-m-t-b">
+                            <div class="item-inner">
+                                <div class="item-title item-floating-label">Descripcion</div>
+                                <div class="item-input-wrap">
+                                    <input type="text" placeholder="descripción a consultar"
+                                        id="autocomplete-dropdown-descripcion">
+                                    <span class="input-clear-button"></span>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                    <div class="list sin-m-t-b">
+                        <ul>
+                            <li class="item-content">
+                                <div class="item-inner">
+                                    <button class="col button button-raised button-fill"
+                                        onclick="consultaryescribir()">consultar</button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--
+        <div class="row d-none todos" id="consulta-categoria">
+            <div class="col-100">
+
+                <div class="list">
+                    <ul>
+                        <li class="item-content item-input item-input-outline">
+                            <div class="item-inner">
+                                <div class="item-title item-floating-label">Categoría</div>
+                                <div class="item-input-wrap">
+                                    <input type="text" placeholder="Categoría a consultar" id="consultar-por-categoria">
+                                    <span class="input-clear-button"></span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="item-content item-input item-input-outline">
+                            <div class="item-inner">
+                                <button class="col button button-outline button-round button-raised "
+                                    onclick="consultaryescribir(2)">consultar</button>
+                            </div>
+                        </li>
+                        <ul>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row d-none todos" id="consulta-marca">
+            <div class="col-100">
+                <div class="list">
+                    <ul>
+                        <li class="item-content item-input item-input-outline">
+                            <div class="item-inner">
+                                <div class="item-title item-floating-label">Marca</div>
+                                <div class="item-input-wrap">
+                                    <input type="text" placeholder="Marca a consultar" id="consultar-por-marca">
+                                    <span class="input-clear-button"></span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="item-content item-input item-input-outline">
+                            <div class="item-inner">
+                                <button class="col button button-outline button-round button-raised "
+                                    onclick="consultaryescribir(3)">consultar</button>
+                            </div>
+                        </li>
+                        <ul>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row d-none todos" id="consulta-precio">
+            <div class="col-100">
+                <div class="list">
+                    <ul>
+                        <li class="item-content item-input item-input-outline">
+                            <div class="item-inner">
+                                <div class="item-title item-floating-label">Precio</div>
+                                <div class="item-input-wrap">
+                                    <input type="number" placeholder="Marca a consultar" id="consultar-por-precio">
+                                    <span class="input-clear-button"></span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="item-content item-input item-input-outline">
+                            <div class="item-inner">
+                                <button class="col button button-outline button-round button-raised "
+                                    onclick="consultaryescribir(4)">consultar</button>
+                            </div>
+                        </li>
+                        <ul>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="row d-none todos" id="consulta-stock">
+            <div class="col-100">
+
+            </div>
+        </div>
+    -->
+
+        <div class="row  todos d-none" id="consulta-escaneo">
+            <div class="col-100">
+                <h3 class="text-align-center">Consultar mediante escaneo</h3>
+
+                <div class="list sin-m-t-b">
+                    <ul>
+                        <li class="item-content">
+                            <div class="item-inner">
+                                <button class="col button button-raised button-fill"
+                                    onclick="buscarConEscaneo()">consultar</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="row todos" id="consulta-compuesta">
+
+
+
+
+            <div class="col-100 sin-m-t-b">
+                <h3 class="text-align-center">Consulta compuesta</h3>
+                <div class="list list sin-m-t-b">
+                    <ul class="sin-m-t-b">
+                        <div class="list no-hairlines-md sin-m-t-b">
+                            <li class="item-content item-input inline-label">
+                                <div class="item-inner">
+                                    <div class="item-title item-label">Marca: </div>
+                                    <div class="item-input-wrap">
+                                        <input id="autocomplete-dropdown-marcas" type="text"
+                                            placeholder="Indicá la marca">
+                                    </div>
+                                </div>
+                            </li>
+                        </div>
+
+                        <li class="item-content item-input inline-label">
+                            <div class="item-inner">
+                                <div class="item-title item-label">Categoría: </div>
+                                <div class="item-input-wrap">
+                                    <input id="autocomplete-dropdown-categorias" type="text"
+                                        placeholder="Indicá la categoría">
+                                </div>
+                            </div>
+                        </li>
+                </div>
+            </div>
+
+            <div class="col-60 sin-m-t-b">
+                <div class="list no-hairlines-md sin-m-t-b">
+                    <ul>
+                        <li class="item-content item-input">
+                            <div class="item-inner">
+                                <div class="item-title item-label">Con stock</div>
+                                <div class="item-input-wrap input-dropdown-wrap">
+                                    <select id="query4articulos">
+                                        <option value=">=">Todos</option>
+                                        <option value="mayor">Mayor a:</option>
+                                        <option value="menor">Menor a:</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-40 sin-m-t-b">
+                <div class="list no-hairlines-md sin-m-t-b">
+                    <ul>
+                        <li class="item-content item-input item-input-outline">
+                            <div class="item-inner">
+                                <div class="item-title item-floating-label">Stock</div>
+                                <div class="item-input-wrap">
+                                    <input type="number" placeholder="Unidades" id="consultar-por-stock-compuesta">
+                                    <span class="input-clear-button"></span>
+                                </div>
+                            </div>
+                        </li>
+                        <ul>
+                </div>
+            </div>
+
+            <div class="col-60 sin-m-t-b">
+                <div class="list no-hairlines-md sin-m-t-b">
+                    <ul>
+                        <li class="item-content item-input">
+                            <div class="item-inner">
+                                <div class="item-title item-label">Con precio</div>
+                                <div class="item-input-wrap input-dropdown-wrap">
+                                    <select id="consulta-compuesta-precio">
+                                        <option value=">=">Todos</option>
+                                        <option value="mayor">Mayor a:</option>
+                                        <option value="menor">Menor a:</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-40 sin-m-t-b">
+                <div class="list no-hairlines-md sin-m-t-b">
+                    <ul>
+                        <li class="item-content item-input item-input-outline">
+                            <div class="item-inner">
+                                <div class="item-title item-floating-label">precio</div>
+                                <div class="item-input-wrap">
+                                    <input type="number" placeholder="$" id="consultar-por-precio-compuesta">
+                                    <span class="input-clear-button"></span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <ul>
+                </div>
+            </div>
+            <div class="col-100">
+
+                <div class="list sin-m-t-b">
+                    <ul>
+                        <li class="item-content">
+                            <div class="item-inner">
+                                <button class="col button button-raised button-fill"
+                                    onclick="queryCompuesta()">consultar</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+
+
+
+
+        <div class="row" id="bodyconsultas"></div>
+
+
+        <div class="row  d-none" id="bodyConsulsddtas">
+
+
+
+            <div class="col-100">
+
+                <!-- Separate collapsibles - omit "accordion-list" class-->
+                <div class="block-title text-align-center">Elegí el tipo de consulta</div>
+                <div class="list">
+
+                    <button class="col button button-outline button-round button-raised mtb-2"
+                        id="consultaMedianteEscaneo">Mediante escaneo</button>
+
+                    <button class="col button button-outline button-round button-raised mtb-2"
+                        id="consultaMedianteCategoria" onclick="navegarAconsultarporcategoria()">Por categoria</button>
+
+                    <button class="col button button-outline button-round button-raised mtb-2"
+                        id="consultaMedianteMarca">Por marca</button>
+
+                    <button class="col button button-outline button-round button-raised mtb-2"
+                        id="consultaMedianteDescripcion">Por descripción</button>
+
+                    <button class="col button button-outline button-round button-raised mtb-2"
+                        id="consultaMedianteId">Por
+                        id</button>
+                    <button class="col button button-outline button-round button-raised mtb-2"
+                        id="consultaMedianteVariaciones">Por variaciones</button>
+
+                    <button class="col button button-outline button-round button-raised mtb-2"
+                        id="consultaMediantePrecio">Por precio</button>
+                    <button class="col button button-outline button-round button-raised mtb-2"
+                        id="consultaMedianteStock">Por stock</button>
+
+
+
+
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,222 @@
+<!-- We don't need a full layout in this file because this page will be parsed with Ajax.  -->
+<div class="page" data-name="consultas-por-escaneo">
+    <div class="navbar">
+        <div class="navbar-inner sliding navofsesion">
+            <div class="left">
+                <a href="#" class="link back">
+                    <i class="icon icon-back"></i>
+                    <span class="ios-only">Back</span>
+                </a>
+            </div>
+            <div class="title">Consultas sobre articulos</div>
+        </div>
+    </div>
+    <div class="page-content">
+
+        <div class="row" id="bodyConsultas">
+
+
+
+            <div class="col-100">
+
+                <!-- Separate collapsibles - omit "accordion-list" class-->
+                <div class="block-title">Tipos de consultas</div>
+                <div class="list">
+                    <ul>
+                        <li class="accordion-item"><a href="#" class="item-content item-link">
+                                <div class="item-inner">
+                                    <div class="item-title">Consultar por categoria</div>
+                                </div>
+                            </a>
+                            <div class="accordion-item-content item-input item-input-outline">
+                                <div class="block row">
+
+                                    <div class="item-inner">
+                                        <div class="item-title item-floating-label">descripción</div>
+                                        <div class="item-input-wrap">
+                                            <input type="text" placeholder="OPCIONAL">
+                                            <span class="input-clear-button"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="item-inner" id="escanearcodEAN">
+                                        <button class="col button button-raised button-fill">consular</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </li>
+                        <li class="accordion-item"><a href="#" class="item-content item-link">
+                                <div class="item-inner">
+                                    <div class="item-title">Consultar por marca</div>
+                                </div>
+                            </a>
+                            <div class="accordion-item-content">
+                                <div class="block">
+                                    <p>Item 1 content. Lorem ipsum dolor sit amet...</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="accordion-item"><a href="#" class="item-content item-link">
+                                <div class="item-inner">
+                                    <div class="item-title">Consultar por id</div>
+                                </div>
+                            </a>
+                            <div class="accordion-item-content">
+                                <div class="block">
+                                    <p>Item 1 content. Lorem ipsum dolor sit amet...</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="accordion-item"><a href="#" class="item-content item-link">
+                                <div class="item-inner">
+                                    <div class="item-title">Consultar por descripcion</div>
+                                </div>
+                            </a>
+                            <div class="accordion-item-content">
+                                <div class="block">
+                                    <p>Item 2 content. Lorem ipsum dolor sit amet...</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="accordion-item"><a href="#" class="item-content item-link">
+                                <div class="item-inner">
+                                    <div class="item-title">Consultar mediante escaneo</div>
+                                </div>
+                            </a>
+                            <div class="accordion-item-content">
+                                <div class="block">
+                                    <p>Item 2 content. Lorem ipsum dolor sit amet...</p>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+
+
+
+                <button onclick="consultaryescribir()">consultar</button>
+                <div class="list sinMarginTyB">
+                    <ul>
+                        <div class="list simple-list sinMarginTyB">
+                            <li>
+                                <span>Consultar articulos</span>
+                                <label class="toggle toggle-init color-green">
+                                    <input type="checkbox">
+                                    <span class="toggle-icon"></span>
+                                </label>
+                            </li>
+                        </div>
+
+
+                        <li class="item-content item-input item-input-outline">
+                            <div class="item-inner col-50 ">
+                                <div class="item-title item-floating-label">descripción</div>
+                                <div class="item-input-wrap">
+                                    <input type="text" placeholder="OPCIONAL">
+                                    <span class="input-clear-button"></span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <div class="col-50">
+                            <li class="item-content item-input item-input-outline">
+                                <div class="item-inner ">
+                                    <div class="item-title item-floating-label">id</div>
+                                    <div class="item-input-wrap">
+                                        <input type="text" placeholder="Destinatario">
+                                        <span class="input-clear-button"></span>
+                                    </div>
+                                </div>
+                            </li>
+                        </div>
+
+                        <li class="item-content item-input item-input-outline">
+                            <div class="item-inner ">
+                                <div class="item-title item-floating-label">Domicilio</div>
+                                <div class="item-input-wrap">
+                                    <input type="text" placeholder="Domicilio">
+                                    <span class="input-clear-button"></span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="item-content item-input item-input-outline">
+                            <div class="item-inner ">
+                                <div class="item-title item-floating-label">DATOS ADICIONALES (OPCIONAL)</div>
+                                <div class="item-input-wrap">
+                                    <input type="text" placeholder="DATOS ADICIONALES (OPCIONAL)">
+                                    <span class="input-clear-button"></span>
+                                </div>
+                            </div>
+                        </li>
+
+
+
+                        <div class="col-50">
+                            <li class="item-content item-input item-input-outline">
+                                <div class="item-inner w-50" id="ingresarEAN">
+                                    <div class="item-title item-floating-label">Cantidad</div>
+                                    <div class="item-input-wrap">
+                                        <input type="number" placeholder="Cantidad">
+                                        <span class="input-clear-button"></span>
+                                    </div>
+                                </div>
+                                <div class="item-inner  w-50" id="escanearcodEAN">
+                                    <button class="col button button-raised button-fill">Generar</button>
+                                </div>
+                            </li>
+                        </div>
+
+
+
+
+
+                </div>
+            </div>
+
+            <!--
+            <div class="col-100">
+       
+                <div class="data-table card">
+                    <table>
+                        <thead>
+                            <thead>
+                                <tr>
+                                    <th class="label-cell">Descripcion</th>
+                                    <th class="numeric-cell">stock</th>
+                                    <th class="numeric-cell">precio</th>
+                                </tr>
+                            </thead>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="label-cell" id="descripcon">Remera negra Nike</td>
+                                <td class="numeric-cell">159</td>
+                                <td class="numeric-cell">$2890</td>
+
+
+                            </tr>
+                            <tr>
+                                <td class="label-cell">Remera negra Nike</td>
+                                <td class="numeric-cell">159</td>
+                                <td class="numeric-cell">$2890</td>
+
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+            </div>
+        -->
+
+
+
+        </div>
+    </div>
+
+
+
+</div>
+</div>

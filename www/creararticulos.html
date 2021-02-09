@@ -1,14 +1,14 @@
 <!-- We don't need a full layout in this file because this page will be parsed with Ajax.  -->
-<div class="page" data-name="crearArticulos">
+<div class="page" data-name="creararticulos">
     <div class="navbar">
-        <div class="navbar-inner sliding">
+        <div class="navbar-inner sliding navofsesion">
             <div class="left">
                 <a href="#" class="link back">
                     <i class="icon icon-back"></i>
                     <span class="ios-only">Back</span>
                 </a>
             </div>
-            <div class="title m-auto">crear articulos</div>
+            <div class="title">Crear artículos</div>
         </div>
     </div>
     <div class="page-content">
@@ -18,60 +18,76 @@
             <div class="col-100">
                 <div class="list">
                     <ul>
-                        <li class="item-content item-input item-input-outline">
-                            <div class="item-inner">
-                                <div class="item-title item-floating-label">Descripcion</div>
-                                <div class="item-input-wrap">
-                                    <input type="text" placeholder="Descripcion" id="crearDescripcionArticulo">
-                                    <span class="input-clear-button"></span>
-                                </div>
-                            </div>
-                        </li>
-                        <div class="col-50">
-                            <li class="item-content item-input item-input-outline">
-                                <div class="item-inner" id="ingresarEAN">
-                                    <div class="item-title item-floating-label">Codigo EAN</div>
+                        <div class="list no-hairlines-md">
+                            <li class="item-content item-input inline-label">
+                                <div class="item-inner">
+                                    <div class="item-title item-label">Marca: </div>
                                     <div class="item-input-wrap">
-                                        <input type="text" placeholder="Codigo EAN" id="crearEanArticulo">
-                                        <span class="input-clear-button"></span>
+                                        <input id="autocomplete-dropdown-marcas" type="text"
+                                            placeholder="Indicá la marca">
                                     </div>
-                                </div>
-                                <div class="item-inner" id="escanearcodEAN">
-                                    <button class="col button button-raised">escanear EAN</button>
                                 </div>
                             </li>
                         </div>
-                        <li class="item-content item-input item-input-outline">
-                            <div class="item-inner" id="ingCATEGORIA">
-                                <div class="item-title item-floating-label">Categoria</div>
+
+
+
+
+                        <li class="item-content item-input inline-label">
+                            <div class="item-inner">
+                                <div class="item-title item-label">Categoría: </div>
                                 <div class="item-input-wrap">
-                                    <input type="text" placeholder="Categoria" id="crearCategoriaArticulo">
-                                    <span class="input-clear-button"></span>
+                                    <input id="autocomplete-dropdown-categorias" type="text"
+                                        placeholder="Indicá la categoría">
                                 </div>
-                            </div>
-                            <div class="item-inner" id="ingMARCA">
-                                <div class="item-title item-floating-label">Marca</div>
-                                <div class="item-input-wrap">
-                                    <input type="text" placeholder="Marca" id="crearMarcaArticulo">
-                                    <span class="input-clear-button"></span>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="item-content item-input item-input-outline">
-                            <div class="item-inner" id="ingPRECIO">
-                                <div class="item-title item-floating-label">Precio</div>
-                                <div class="item-input-wrap">
-                                    <input type="number" placeholder="Precio" id="crearPrecioArticulo">
-                                    <span class="input-clear-button"></span>
-                                </div>
-                            </div>
-                            <div class="item-inner" id="ingFOTO">
-                                <button class="col button button-raised">foto</button>
                             </div>
                         </li>
 
 
-                        <li class="accordion-item"><a href="#" class="item-content item-link">
+                        <li class="item-content item-input item-input-outline">
+                            <div class="item-inner">
+                                <div class="item-title item-floating-label">Descripción</div>
+                                <div class="item-input-wrap">
+                                    <input type="text" placeholder="Descripción del artículo"
+                                        id="crearDescripcionArticulo">
+                                    <span class="input-clear-button"></span>
+                                </div>
+                            </div>
+                        </li>
+
+
+
+
+
+                        <div class="row">
+                            <div class="col-50">
+                                <li class="item-content item-input item-input-outline">
+                                    <div class="item-inner">
+                                        <div class="item-title item-floating-label">Precio</div>
+                                        <div class="item-input-wrap">
+                                            <input type="number" placeholder="Precio del artículo"
+                                                id="crearPrecioArticulo">
+                                            <span class="input-clear-button"></span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </div>
+                            <div class="col-50">
+                                <li class="item-content item-input item-input-outline">
+                                    <div class="item-inner">
+                                        <div class="item-title item-floating-label">Stock
+                                        </div>
+                                        <div class="item-input-wrap">
+                                            <input type="number" placeholder="stock - opcional" id="crearStockArticulo">
+                                            <span class="input-clear-button"></span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </div>
+                        </div>
+
+
+                        <li class=" accordion-item"><a href="#" class="item-content item-link">
                                 <div class="item-inner col button button-raised">
                                     <div class="item-title">Carateristicas secundarias</div>
                                 </div>
@@ -80,20 +96,33 @@
                                 <div class="block">
                                     <div class="list no-hairlines-md">
                                         <ul>
-                                            <li class="item-content item-input item-input-outline">
-                                                <div class="item-inner">
-                                                    <div class="item-title item-floating-label">Name</div>
-                                                    <div class="item-input-wrap">
-                                                        <input type="text" placeholder="Your name">
-                                                        <span class="input-clear-button"></span>
+                                            <div class="col-50">
+                                                <li class="item-content item-input item-input-outline">
+                                                    <div class="item-inner" id="ingresarEAN">
+                                                        <div class="item-title item-floating-label"
+                                                            id="insertarEanEscaneado">Codigo EAN</div>
+                                                        <div class="item-input-wrap">
+                                                            <input type="number" placeholder="Codigo EAN"
+                                                                id="crear-codigo-ean">
+                                                            <span class="input-clear-button"></span>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </li>
+                                                    <div class="item-inner" id="escanearcodEAN">
+                                                        <button class="col button button-outline button-raised"
+                                                            id="escanear-ean-crear">escanear EAN</button>
+                                                    </div>
+                                                </li>
+                                            </div>
+
+
+
                                             <li class="item-content item-input item-input-outline">
                                                 <div class="item-inner">
-                                                    <div class="item-title item-floating-label">Password</div>
+                                                    <div class="item-title item-floating-label">
+                                                        Ubicacion</div>
                                                     <div class="item-input-wrap">
-                                                        <input type="password" placeholder="Your password">
+                                                        <input type="text" placeholder="Ubicacion-opcional"
+                                                            id="crearUbicacionArticulo">
                                                         <span class="input-clear-button"></span>
                                                     </div>
                                                 </div>
@@ -106,12 +135,12 @@
                             </div>
                         </li>
 
-
-                        <div class="item-inner">
-                            <button class="col button button-outline button-raised" id="crearArticuloEnBaseDeDatos"
-                                onclick="crearArticuloEnBase()">Crear</button>
-                        </div>
-
+                        <li class="item-content">
+                            <div class="item-inner">
+                                <button class="col button button-raised button-fill" id="crearArticuloEnBaseDeDatos"
+                                    onclick="crearArticuloEnBase()" id="boton-crear-en-base">Crear</button>
+                            </div>
+                        </li>
 
                 </div>
             </div>
@@ -119,6 +148,6 @@
 
         </div>
 
-
     </div>
+</div>
 </div>
